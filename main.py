@@ -22,6 +22,7 @@ def startGame():
     print(f"The dealer got [{dealersCards[0]}, X]")
     print(f"You got {playersCards}")
 
+#check if there are any aces
 def aceChecker(person):
     if person == "dealer" and dealersCards.count(11) > 0:
         return True
@@ -32,6 +33,7 @@ def aceChecker(person):
     elif person == "player" and playersCards.count(11) == 0:
         return False
 
+#replace the aces with a 1 so it's easier to sum the totals
 def aceFlipper(person):
     if person == "dealer":
         while dealersCards.count(11) > 0:
